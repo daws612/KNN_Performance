@@ -25,10 +25,19 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp
+        mainwindow.cpp \
+    neighbour.cpp
 
 HEADERS += \
-        mainwindow.h
+        mainwindow.h \
+    neighbour.h
 
 FORMS += \
-        mainwindow.ui
+        mainwindow.ui \
+
+SUBDIRS += \
+    KNN_Performance.pro
+
+DISTFILES += \
+    KNN_Performance.pro.user \
+    README.md
