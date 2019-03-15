@@ -2,6 +2,7 @@
 #define NEIGHBOUR_H
 
 #include <QObject>
+#include <QVector>
 
 class Neighbour : public QObject
 {
@@ -15,18 +16,20 @@ public:
     int getClassification() const;
     void setClassification(const int &classification);
 
+    QVector<double> getFeatures() const;
+    void setFeatures(const QVector<double> &features);
+    void addFeature(const double feature);
+
+    QString getClassName() const;
+    void setClassName(const QString &className);
+
+    QString getDescription();
 private:
     double m_distance;
     int m_classification;
+    QVector<double> m_features;
+    QString m_className;
 
 };
-
-//static bool compare(const Neighbour& neighbor1, const Neighbour& neighbor2)
-//{
-//    if(neighbor1.getDistance() == neighbor2.getDistance())
-//        return neighbor1 < neighbor2;
-//    return neighbor1.getDistance() < neighbor2.getDistance();
-
-//}
 
 #endif // NEIGHBOUR_H
